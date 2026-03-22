@@ -1,0 +1,21 @@
+@inherits LayoutComponentBase
+
+<a href="#main-content" data-i18n="skip"
+    class="pointer-events-none fixed left-4 top-4 z-[100] -translate-y-16 rounded-full bg-accent px-4 py-2 text-sm font-semibold text-surface opacity-0 transition focus:pointer-events-auto focus:translate-y-0 focus:opacity-100">
+    Skip to content
+</a>
+<div class="flex min-h-screen flex-col">
+    <NavHeader />
+    <main id="main-content" class="flex-1 outline-none" tabindex="-1">
+        @Body
+    </main>
+    <SiteFooter />
+</div>
+
+<button type="button" id="pds-scroll-top" tabindex="-1" aria-hidden="true"
+    class="fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-4 z-40 flex h-12 w-12 items-center justify-center rounded-full border border-slate-200/90 bg-white/95 text-slate-700 shadow-lg shadow-slate-900/10 backdrop-blur-md transition-[opacity,transform,visibility] duration-300 ease-smooth dark:border-slate-600 dark:bg-slate-900/95 dark:text-slate-200 dark:shadow-black/40 pds-scroll-top--hidden motion-safe:hover:border-accent/40 motion-safe:hover:text-accent motion-safe:active:scale-95"
+    aria-label="Scroll to top">
+    <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+    </svg>
+</button>

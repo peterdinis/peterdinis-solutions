@@ -1,0 +1,14 @@
+@if (!string.IsNullOrEmpty(Key))
+{
+    <p
+        class="mb-3 flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-accent motion-safe:animate-fade-in">
+        <span
+            class="inline-block h-px w-10 origin-left rounded-full bg-gradient-to-r from-accent via-accent-glow to-transparent motion-safe:animate-line-glow"></span>
+        <span data-i18n="@Key">@Fallback</span>
+    </p>
+}
+
+@code {
+    [Parameter] public string? Key { get; set; }
+    [Parameter] public string Fallback { get; set; } = "";
+}

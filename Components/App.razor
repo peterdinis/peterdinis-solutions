@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="sk" class="scroll-smooth">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta id="pds-meta-desc" name="description"
+        content="Peterdinis Solutions — full-stack IT, web, and mobile development. Custom software that fits your business." />
+    <base href="/" />
+    <script>
+        (function () {
+            try {
+                var l = localStorage.getItem('pds-lang');
+                if (l === 'sk' || l === 'cs' || l === 'en') document.documentElement.lang = l;
+                else {
+                    var n = (navigator.language || '').toLowerCase();
+                    if (n.startsWith('cs')) document.documentElement.lang = 'cs';
+                    else if (n.startsWith('en')) document.documentElement.lang = 'en';
+                    else document.documentElement.lang = 'sk';
+                }
+            } catch (e) {
+                document.documentElement.lang = 'sk';
+            }
+        })();
+    </script>
+    <script>
+        (function () {
+            try {
+                var k = 'pds-theme';
+                var v = localStorage.getItem(k);
+                var dark = v ? (v === 'dark') : window.matchMedia('(prefers-color-scheme: dark)').matches;
+                document.documentElement.classList.toggle('dark', dark);
+            } catch (e) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
+    <script>
+        (function () {
+            try {
+                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                    document.documentElement.classList.add('pds-preloader-skip');
+                    sessionStorage.setItem('pds_preloader_done', '1');
+                } else if (sessionStorage.getItem('pds_preloader_done')) {
+                    document.documentElement.classList.add('pds-preloader-skip');
+                }
+            } catch (e) { }
+        })();
+    </script>
+    <ResourcePreloader />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="@Assets["app.css"]" />
+    <link rel="stylesheet" href="@Assets["PeterdinisSolutions.styles.css"]" />
+    <ImportMap />
+    <HeadOutlet />
+</head>
+
+<body class="min-h-screen">
+    <div id="pds-preloader" role="status" aria-live="polite" aria-busy="true">
+        <div class="flex flex-col items-center gap-6 px-6 text-center">
+            <div class="font-display text-2xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-3xl">
+                Peterdinis <span class="text-accent">Solutions</span>
+            </div>
+            <div class="h-1 w-52 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-800 sm:w-64">
+                <div
+                    class="h-full w-2/5 rounded-full bg-gradient-to-r from-accent-dim via-accent to-accent-glow motion-safe:animate-preloader-bar">
+                </div>
+            </div>
+            <p class="text-xs font-medium uppercase tracking-widest text-slate-500 dark:text-slate-500" data-i18n="preloader">Preparing
+                experience</p>
+        </div>
+    </div>
+    <Routes />
+    <script src="js/i18n.js" defer></script>
+    <script src="js/site-ui.js" defer></script>
+    <script src="js/reveal.js" defer></script>
+    <script src="@Assets["_framework/blazor.web.js"]"></script>
+</body>
+
+</html>
