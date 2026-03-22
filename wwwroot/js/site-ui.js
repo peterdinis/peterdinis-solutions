@@ -73,6 +73,47 @@
     else window.addEventListener("load", run);
   }
 
+  function initVisitors() {
+    var el = document.getElementById("pds-visitor-count");
+    if (!el) return;
+    var sessionKey = "pds_visit_recorded";
+
+    function applyTotal(n) {
+      el.setAttribute("data-total", String(n));
+      try {
+        el.textContent = new Intl.NumberFormat(document.documentElement.lang || undefined, {
+          maximumFractionDigits: 0,
+        }).format(n);
+      } catch (e) {
+        el.textContent = String(n);
+      }
+    }
+
+    function run() {
+      var tick = false;
+      try {
+        tick = !sessionStorage.getItem(sessionKey);
+      } catch (e) {}
+      var url = tick ? "/api/visitors/tick" : "/api/visitors";
+      fetch(url, { credentials: "same-origin" })
+        .then(function (r) {
+          return r.ok ? r.json() : null;
+        })
+        .then(function (j) {
+          if (!j || typeof j.total !== "number") return;
+          applyTotal(j.total);
+          if (tick) {
+            try {
+              sessionStorage.setItem(sessionKey, "1");
+            } catch (e) {}
+          }
+        })
+        .catch(function () {});
+    }
+
+    run();
+  }
+
   function initScrollTop() {
     var btn = document.getElementById("pds-scroll-top");
     if (!btn) return;
@@ -131,6 +172,7 @@
     initPreloader();
     initNavDrawer();
     initScrollTop();
+    initVisitors();
   }
 
   if (document.readyState === "loading") {

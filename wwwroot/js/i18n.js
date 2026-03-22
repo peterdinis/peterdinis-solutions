@@ -108,6 +108,11 @@
       contact_lead:
         "Napíšte o produkte, časovej osi a stacku. Odpoviem s úprimným vyhodnotením zhody a ďalšími krokmi.",
       contact_reply: "Odpoveď zvyčajne do jedného pracovného dňa.",
+      visitors_eyebrow: "Štatistiky",
+      visitors_title: "Návštevnosť stránky",
+      visitors_lead:
+        "Počítame otvorenia tejto stránky — každá relácia prehliadača (karta) sa započíta najviac raz, kým ju nezatvoríte.",
+      visitors_label: "Celkom otvorení",
       footer_tag:
         "Full-stack vývoj a IT konzultácie — od prvého náčrtu až po produkciu.",
       footer_pricing: "Cenník",
@@ -245,6 +250,11 @@
       contact_lead:
         "Napište o produktu, časové ose a stacku. Odpovím s upřímným vyhodnocením shody a dalšími kroky.",
       contact_reply: "Odpověď obvykle do jednoho pracovního dne.",
+      visitors_eyebrow: "Statistiky",
+      visitors_title: "Návštěvnost stránky",
+      visitors_lead:
+        "Počítáme otevření této stránky — každá relace prohlížeče (karta) se započítá nejvýše jednou, dokud ji nezavřete.",
+      visitors_label: "Celkem otevření",
       footer_tag:
         "Full-stack vývoj a IT konzultace — od prvního náčrtu až po produkci.",
       footer_pricing: "Ceník",
@@ -382,6 +392,11 @@
       contact_lead:
         "Tell me about the product, timeline, and stack. I'll reply with an honest fit assessment and next steps.",
       contact_reply: "Usually within one business day.",
+      visitors_eyebrow: "Stats",
+      visitors_title: "Site visits",
+      visitors_lead:
+        "We count opens of this site — each browser tab session is recorded at most once until you close it.",
+      visitors_label: "Total opens",
       footer_tag:
         "Full-stack development and IT consulting — from first sketch to production.",
       footer_pricing: "Pricing",
@@ -501,6 +516,22 @@
     if (nav && t.nav_aria) nav.setAttribute("aria-label", t.nav_aria);
     var scrollTopBtn = document.getElementById("pds-scroll-top");
     if (scrollTopBtn && t.scroll_top) scrollTopBtn.setAttribute("aria-label", t.scroll_top);
+    var vc = document.getElementById("pds-visitor-count");
+    if (vc) {
+      var raw = vc.getAttribute("data-total");
+      if (raw != null && raw !== "") {
+        var n = parseInt(raw, 10);
+        if (!isNaN(n)) {
+          try {
+            vc.textContent = new Intl.NumberFormat(document.documentElement.lang || undefined, {
+              maximumFractionDigits: 0,
+            }).format(n);
+          } catch (e) {
+            vc.textContent = String(n);
+          }
+        }
+      }
+    }
   }
 
   function applyPrices(currency, lang) {

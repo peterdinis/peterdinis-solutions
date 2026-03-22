@@ -1,9 +1,11 @@
 using PeterdinisSolutions.Components;
+using PeterdinisSolutions.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents();
+builder.Services.AddSingleton<VisitorCounterStore>();
 
 var app = builder.Build();
 
@@ -18,6 +20,9 @@ app.UseStatusCodePagesWithReExecute("/not-found", createScopeForStatusCodePages:
 app.UseHttpsRedirection();
 
 app.UseAntiforgery();
+
+app.MapGet("/api/visitors", (VisitorCounterStore store) => Results.Json(new { total = store.GetTotal() }));
+app.MapGet("/api/visitors/tick", (VisitorCounterStore store) => Results.Json(new { total = store.IncrementAndGet() }));
 
 app.MapStaticAssets();
 app.MapRazorComponents<App>();
