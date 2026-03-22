@@ -2,6 +2,8 @@
 
 Marketing / portfolio site for **Peterdinis Solutions**: Blazor Web App (.NET), Tailwind CSS, static-friendly UI with light i18n (SK / CS / EN), theme toggle, and a simple **visit counter** backed by the server.
 
+**Status:** this repository is **under active development** — features, content, and structure may change without a major version bump.
+
 ## Requirements
 
 - [.NET SDK 10](https://dotnet.microsoft.com/download) (or the version matching `TargetFramework` in the `.csproj`)
