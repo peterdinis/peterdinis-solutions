@@ -44,7 +44,7 @@
     el.classList.add("pds-preloader--hide");
     window.setTimeout(function () {
       if (el.parentNode) el.parentNode.removeChild(el);
-    }, 520);
+    }, 300);
   }
 
   function initPreloader() {
@@ -59,7 +59,7 @@
     }
 
     var start = typeof performance !== "undefined" ? performance.now() : Date.now();
-    var minMs = 900;
+    var minMs = 400;
 
     function run() {
       var now = typeof performance !== "undefined" ? performance.now() : Date.now();
