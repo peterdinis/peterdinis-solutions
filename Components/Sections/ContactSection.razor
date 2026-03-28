@@ -41,7 +41,7 @@
     protected override void OnInitialized()
     {
         // Decode email from Base64
-        var encodedEmail = "aGVsbG9AcGV0ZXJkaW5pcy5jb20="; // "hello@peterdinis.com" in Base64
+        var encodedEmail = "cGRpbmlzMUBnbWFpbC5jb20="; // "pdinis1@gmail.com" in Base64
         var decodedEmail = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(encodedEmail));
         
         Email = decodedEmail;
