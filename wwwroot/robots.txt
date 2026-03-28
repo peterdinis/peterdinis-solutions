@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /Error
+
+Sitemap: https://peterdinis-solutions.com/sitemap.xml
