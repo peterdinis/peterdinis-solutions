@@ -29,7 +29,7 @@
       nav_menu: "Menu",
       scroll_top: "Späť hore",
       skip: "Preskočiť na obsah",
-      hero_badge: "Voľný termín pre nové projekty",
+      hero_badge: "Momentálne nie som dostupný pre nové projekty",
       hero_h1_1: "IT riešenia, web a mobil — end-to-end od",
       hero_h1_2: "full-stack vývojára",
       hero_lead:
@@ -60,14 +60,14 @@
         "Orientačné sadzby — každá spolupráca dostane jasnú ponuku po zladení rozsahu a časovej osi.",
       popular: "Obľúbené",
       price_from: "od",
-      d_name: "Discovery",
-      d_sub: "jednorazová session",
+      d_name: "Hodinová sadzba",
+      d_sub: "za hodinu",
       d_body:
-        "Zameraná pracovná session na objasnenie cieľov, rizík a najlepšieho technického smeru.",
-      d_li1: "Až 90 minút (videohovor)",
-      d_li2: "Písomné zhrnutie a ďalšie kroky",
-      d_li3: "Orientačný odhad práce a rozpočtu",
-      d_cta: "Objednať discovery",
+        "Flexibilná T&M spolupráca — ideálna pre menšie úlohy, opravy, konzultácie a priebežné ad-hoc práce.",
+      d_li1: "Odpracované hodiny fakturované týždenne",
+      d_li2: "Písomný výkaz každý fakturačný cyklus",
+      d_li3: "Minimum 1 hodina na session",
+      d_cta: "Začať spoluprácu",
       p_name: "Projekt",
       p_sub: "míľnik s fixným rozsahom",
       p_body:
@@ -85,7 +85,7 @@
       r_li3: "Mesačný review a plánovanie",
       r_cta: "Prediskutovať retainer",
       pricing_foot:
-        "Môže platiť DPH / miestne dane. Finálna cena je potvrdená písomne pred začatím práce. Prepočty z EUR na USD alebo CZK sú orientačné.",
+        "Môže platiť DPH / miestne dane. Finálna cena je potvrdená písomne pred začatím práce. Prepočty EUR→CZK a EUR→USD sú orientačné a slúžia len pre informáciu.",
       about_title: "O mne",
       about_lead:
         "Som full-stack vývojár a rád preberám funkcie od databázy po UI. Či potrebujete nový produkt, refaktoring alebo priebežnú podporu, pracujem v malých, jasných iteráciách, aby ste vždy vedeli, kde sme.",
@@ -171,7 +171,7 @@
       nav_menu: "Menu",
       scroll_top: "Zpět nahoru",
       skip: "Přeskočit na obsah",
-      hero_badge: "Volný termín pro nové projekty",
+      hero_badge: "Momentálně nejsem dostupný pro nové projekty",
       hero_h1_1: "IT řešení, web a mobil — end-to-end od",
       hero_h1_2: "full-stack vývojáře",
       hero_lead:
@@ -202,14 +202,14 @@
         "Orientační sazby — každá spolupráce dostane jasnou nabídku po sjednocení rozsahu a časové osy.",
       popular: "Oblíbené",
       price_from: "od",
-      d_name: "Discovery",
-      d_sub: "jednorázová session",
+      d_name: "Hodinová sazba",
+      d_sub: "za hodinu",
       d_body:
-        "Cílená pracovní session k objasnění cílů, rizik a nejlepšího technického směru.",
-      d_li1: "Až 90 minut (videohovor)",
-      d_li2: "Písemné shrnutí a další kroky",
-      d_li3: "Orientační odhad práce a rozpočtu",
-      d_cta: "Objednat discovery",
+        "Flexibilní T&M spolupráce — ideální pro menší úkoly, opravy, konzultace a průběžné ad-hoc práce.",
+      d_li1: "Odpracované hodiny fakturované týdně",
+      d_li2: "Písemný výkaz každý fakturační cyklus",
+      d_li3: "Minimum 1 hodina na session",
+      d_cta: "Zahájit spolupráci",
       p_name: "Projekt",
       p_sub: "milník s fixním rozsahem",
       p_body:
@@ -227,7 +227,7 @@
       r_li3: "Měsíční review a plánování",
       r_cta: "Prodiskutovat retainer",
       pricing_foot:
-        "Může platit DPH / místní daně. Finální cena je potvrzena písemně před začátkem práce. Přepočty z EUR na USD nebo CZK jsou orientační.",
+        "Může platit DPH / místní daně. Finální cena je potvrzena písemně před začátkem práce. Přepočty EUR→CZK a EUR→USD jsou orientační a slouží jen pro orientaci.",
       about_title: "O mně",
       about_lead:
         "Jsem full-stack vývojář a rád přebírám funkce od databáze po UI. Ať potřebujete nový produkt, refaktoring nebo průběžnou podporu, pracuji v malých, jasných iteracích, abyste vždy věděli, kde jsme.",
@@ -313,7 +313,7 @@
       nav_menu: "Menu",
       scroll_top: "Back to top",
       skip: "Skip to content",
-      hero_badge: "Availability for new projects",
+      hero_badge: "Not currently available for new projects",
       hero_h1_1: "IT, web, and mobile — end-to-end from a",
       hero_h1_2: "full-stack developer",
       hero_lead:
@@ -344,16 +344,16 @@
         "Indicative rates — every engagement gets a clear quote once scope and timeline are aligned.",
       popular: "Popular",
       price_from: "from",
-      d_name: "Discovery",
-      d_sub: "one-off session",
+      d_name: "Hourly",
+      d_sub: "per hour",
       d_body:
-        "A focused working session to clarify goals, risks, and the best technical direction.",
-      d_li1: "Up to 90 minutes (video call)",
-      d_li2: "Written summary and next steps",
-      d_li3: "Indicative effort and budget estimate",
-      d_cta: "Book discovery",
+        "Flexible time-and-materials engagement — ideal for small tasks, fixes, consultations, and ongoing ad-hoc work.",
+      d_li1: "Tracked hours, billed weekly",
+      d_li2: "Written summary per billing cycle",
+      d_li3: "Minimum 1 hour per session",
+      d_cta: "Get started",
       p_name: "Project",
-      p_sub: "milestone with fixed scope",
+      p_sub: "fixed scope milestone",
       p_body:
         "End-to-end delivery for a defined feature set — web, API, or mobile slice with staging handoff.",
       p_li1: "Milestones and demo cycles",
@@ -369,7 +369,7 @@
       r_li3: "Monthly review and planning",
       r_cta: "Discuss a retainer",
       pricing_foot:
-        "VAT / local taxes may apply. Final pricing is confirmed in writing before work begins. EUR to USD or CZK conversions are indicative.",
+        "VAT / local taxes may apply. Final pricing is confirmed in writing before work begins. EUR→CZK and EUR→USD conversions are indicative and shown for convenience.",
       about_title: "About me",
       about_lead:
         "I'm a full-stack developer who likes owning features from database to UI. Whether you need a new product, a refactor, or ongoing support, I work in small, clear iterations so you always know where we stand.",
