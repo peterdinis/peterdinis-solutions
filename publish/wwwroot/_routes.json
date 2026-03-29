@@ -1,8 +1,8 @@
 {
   "version": 1,
   "include": ["/*"],
-  "exclude": [],
+  "exclude": ["/assets/*", "/*.css", "/*.js", "/*.wasm", "/*.dll"],
   "fallback": {
-    "index.html": "/*"
+    "/*": "/index.html"
   }
 }
