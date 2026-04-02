@@ -1,7 +1,5 @@
 @page "/Error"
 @layout MainLayout
-@using System.Diagnostics
-@inject IHostEnvironment HostEnvironment
 
 <PageTitle>Error | Peterdinis Solutions</PageTitle>
 
@@ -29,15 +27,6 @@
                 <p class="mt-4 text-base leading-relaxed text-slate-600 dark:text-slate-400" data-i18n="error_lead">
                     An error occurred while processing your request. Please try again later.</p>
 
-                @if (ShowRequestId)
-                {
-                    <p class="mt-6 rounded-xl border border-slate-200/80 bg-slate-50 px-4 py-3 text-sm dark:border-slate-700 dark:bg-slate-900/50">
-                        <span class="font-medium text-slate-700 dark:text-slate-300" data-i18n="error_request_label">Request ID</span>
-                        <code
-                            class="mt-1 block break-all font-mono text-xs text-slate-800 dark:text-slate-200">@RequestId</code>
-                    </p>
-                }
-
                 <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                     <a href="/" data-i18n="error_try_home"
                         class="inline-flex flex-1 items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-surface shadow-glow transition hover:bg-accent-glow sm:flex-none">
@@ -48,31 +37,7 @@
                         Contact
                     </a>
                 </div>
-
-                @if (HostEnvironment.IsDevelopment())
-                {
-                    <div
-                        class="mt-10 border-t border-slate-200 pt-8 dark:border-slate-700">
-                        <h2 class="text-sm font-semibold uppercase tracking-wider text-amber-600 dark:text-amber-400"
-                            data-i18n="error_dev_title">Development mode</h2>
-                        <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400" data-i18n="error_dev_p1">
-                            The Development environment shows more detailed error information for debugging.</p>
-                        <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400" data-i18n="error_dev_p2">
-                            Do not enable Development in production. Set ASPNETCORE_ENVIRONMENT to Development locally and restart.</p>
-                    </div>
-                }
             </div>
         </div>
     </div>
 </section>
-
-@code {
-    [CascadingParameter]
-    private HttpContext? HttpContext { get; set; }
-
-    private string? RequestId { get; set; }
-    private bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
-
-    protected override void OnInitialized() =>
-        RequestId = Activity.Current?.Id ?? HttpContext?.TraceIdentifier;
-}

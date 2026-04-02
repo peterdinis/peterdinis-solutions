@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "include": ["/*"],
+  "exclude": [
+    "/_framework/*",
+    "/_content/*",
+    "/css/*",
+    "/js/*",
+    "/*.css",
+    "/*.js",
+    "/*.json",
+    "/*.ico",
+    "/*.png",
+    "/*.txt",
+    "/*.xml",
+    "/*.wasm",
+    "/*.woff2",
+    "/*.webmanifest"
+  ],
+  "fallback": {
+    "/*": "/index.html"
+  }
+}

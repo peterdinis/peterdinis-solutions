@@ -4,3 +4,6 @@ node_modules/
 *.user
 .vs/
 App_Data/
+output/
+.dotnet/
+dotnet-install.sh
