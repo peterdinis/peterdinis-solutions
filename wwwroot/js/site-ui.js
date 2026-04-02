@@ -90,25 +90,13 @@
     }
 
     function run() {
+      if (!window.pdsVisitors) return;
       var tick = false;
       try {
         tick = !sessionStorage.getItem(sessionKey);
       } catch (e) {}
-      var url = tick ? "/api/visitors/tick" : "/api/visitors";
-      fetch(url, { credentials: "same-origin" })
-        .then(function (r) {
-          return r.ok ? r.json() : null;
-        })
-        .then(function (j) {
-          if (!j || typeof j.total !== "number") return;
-          applyTotal(j.total);
-          if (tick) {
-            try {
-              sessionStorage.setItem(sessionKey, "1");
-            } catch (e) {}
-          }
-        })
-        .catch(function () {});
+      var n = tick ? window.pdsVisitors.tickIfNewSession() : window.pdsVisitors.getTotal();
+      if (typeof n === "number" && !isNaN(n)) applyTotal(n);
     }
 
     run();
