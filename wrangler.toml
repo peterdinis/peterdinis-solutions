@@ -1,0 +1,6 @@
+# Cloudflare Pages — must match your project name in the dashboard.
+# https://developers.cloudflare.com/pages/functions/wrangler-configuration/
+
+name = "peterdinissolutions"
+compatibility_date = "2025-04-01"
+pages_build_output_dir = "build"

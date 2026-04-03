@@ -1,13 +1,33 @@
 {
   "name": "peterdinissolutions",
   "private": true,
+  "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "build:css": "tailwindcss -i ./wwwroot/css/input.css -o ./wwwroot/app.css --minify",
-    "watch:css": "tailwindcss -i ./wwwroot/css/input.css -o ./wwwroot/app.css --watch"
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "prepare": "svelte-kit sync || true",
+    "pages:deploy": "wrangler pages deploy build",
+    "deploy": "npm run build && wrangler pages deploy build"
   },
   "devDependencies": {
+    "@sveltejs/adapter-static": "^3.0.8",
+    "@sveltejs/kit": "^2.21.1",
+    "@sveltejs/vite-plugin-svelte": "^5.0.3",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.17"
+    "svelte": "^5.19.0",
+    "svelte-check": "^4.1.4",
+    "tailwindcss": "^3.4.17",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7",
+    "wrangler": "^4.12.0"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.6.0"
   }
 }

@@ -1,62 +1,63 @@
 # Peterdinis Solutions
 
-Marketing / portfolio site for **Peterdinis Solutions**: Blazor Web App (.NET), Tailwind CSS, static-friendly UI with light i18n (SK / CS / EN), theme toggle, and a simple **visit counter** backed by the server.
+Marketing / portfolio site for **Peterdinis Solutions**: **SvelteKit**, **TypeScript**, **Tailwind CSS**, and **shadcn-svelte–compatible** UI primitives (`Button`, `Card`). Fully static output for CDN hosting (e.g. Cloudflare Pages).
 
-**Status:** this repository is **under active development** — features, content, and structure may change without a major version bump.
+- i18n: **SK / CS / EN** (see `src/lib/i18n/messages.json`)
+- Theme: light / dark (`localStorage`)
+- Visit counter: **browser-only** (`localStorage` + session), no server
 
 ## Requirements
 
-- [.NET SDK 10](https://dotnet.microsoft.com/download) (or the version matching `TargetFramework` in the `.csproj`)
-- [Node.js](https://nodejs.org/) (for Tailwind — `npm install`)
+- [Node.js](https://nodejs.org/) 20+ recommended
 
 ## Quick start
 
 ```bash
-cd PeterdinisSolutions
 npm install
-npm run build:css
-dotnet run
+npm run dev
 ```
 
-Open the URL shown in the terminal (typically `https://localhost:5xxx`).
+Open the URL shown in the terminal (usually `http://localhost:5173`).
 
-### CSS during development
+## Build (production / Cloudflare Pages)
 
 ```bash
-npm run watch:css
+npm ci
+npm run build
 ```
 
-Run this in a second terminal while editing `wwwroot/css/input.css` or Razor/Tailwind classes so `wwwroot/app.css` stays up to date.
+Static site is written to **`build/`**.
 
-The project can also run `npm run build:css` automatically before MSBuild when `node_modules/tailwindcss` is present (see `PeterdinisSolutions.csproj`).
+Cloudflare Pages:
 
-## Project layout
+- **Build command:** `./build.sh` or `npm ci && npm run build`
+- **Build output directory:** `build`
 
-| Area | Role |
-|------|------|
-| `Components/Pages/Home.razor` | Landing sections |
-| `Components/Sections/` | Hero, services, pricing, about, portfolio, **visitors**, contact |
-| `Components/Layout/` | `NavHeader`, `MainLayout`, `SiteFooter` |
-| `wwwroot/js/i18n.js` | Language + currency strings, `data-i18n` hydration |
-| `wwwroot/js/site-ui.js` | Theme, preloader, mobile nav, scroll-to-top, **visitor API calls** |
-| `wwwroot/css/input.css` | Tailwind entry + a few component hooks |
-| `Services/VisitorCounterStore.cs` | Persisted visit total |
+`static/_routes.json` and `static/_headers` are copied into the output for SPA-style fallback and caching headers.
 
-## Visitor counter
+### Deploy from your machine (Wrangler)
 
-- The **Visitors** section (before contact) shows a running total.
-- On each **browser tab session**, the client calls `GET /api/visitors/tick` **once** (tracked with `sessionStorage`). Further loads in the same tab use `GET /api/visitors` so the number stays in sync without double-counting refreshes.
-- Totals are stored in **`App_Data/visitor-count.json`** (created automatically). That folder is listed in `.gitignore` so counts stay local per environment.
-- Counts are **approximate** (bots, prefetch, and disabled storage can skew results). For analytics, consider dedicated tooling (e.g. Plausible, GA4, Application Insights).
+1. Install deps: `npm install`
+2. Set `name` in `wrangler.toml` to your **Pages project name** (dashboard).
+3. Log in once: `npx wrangler login`
+4. Deploy: `npm run deploy` (build + upload) or `npm run pages:deploy` if `build/` is already fresh.
 
-### Deployment notes
+Override project without editing the file:
 
-Ensure the app process **can write** to `App_Data` under the content root (or change `VisitorCounterStore` to use a writable path / database). Read-only filesystems will fall back to an in-memory counter only for that process lifetime.
+```bash
+npm run build && npx wrangler pages deploy build --project-name=your-project-name
+```
 
-## Configuration
+## More shadcn-svelte components
 
-- **HTTPS**: Development certificate trust — `dotnet dev-certs https --trust`
-- **Production**: set `ASPNETCORE_ENVIRONMENT=Production`, configure hosting (Kestrel / reverse proxy) per [ASP.NET Core docs](https://learn.microsoft.com/aspnet/core/hosting/).
+This repo includes `components.json` pointing at Tailwind + `src/app.css`. To add official registry components:
+
+```bash
+npx shadcn-svelte@latest add dialog
+# …
+```
+
+See [shadcn-svelte](https://www.shadcn-svelte.com/).
 
 ## License
 
