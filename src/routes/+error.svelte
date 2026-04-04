@@ -1,14 +1,26 @@
 <script lang="ts">
   import { Button } from "$lib/components/ui/button";
+  import { SITE_URL } from "$lib/site";
   import { t } from "$lib/i18n";
   import { language } from "$lib/stores/language";
   import { page } from "$app/stores";
+
+  const canonical = $derived(`${SITE_URL}${$page.url.pathname === "/" ? "" : $page.url.pathname}`);
+  const errTitle = $derived(t($language, "error_meta_title"));
+  const errDesc = $derived(t($language, "error_meta_desc"));
 </script>
 
 <svelte:head>
-  <title>{t($language, "error_meta_title")}</title>
+  <title>{errTitle}</title>
+  <meta name="description" content={errDesc} />
   <meta name="robots" content="noindex, nofollow" />
-  <meta name="description" content={t($language, "error_meta_desc")} />
+  <link rel="canonical" href={canonical} />
+  <meta property="og:title" content={errTitle} />
+  <meta property="og:description" content={errDesc} />
+  <meta property="og:url" content={canonical} />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={errTitle} />
+  <meta name="twitter:description" content={errDesc} />
 </svelte:head>
 
 <section class="relative overflow-hidden border-b border-slate-200/90 dark:border-slate-800/60">

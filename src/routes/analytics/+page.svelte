@@ -13,11 +13,6 @@
   });
 </script>
 
-<svelte:head>
-  <title>{t($language, "analytics_meta_title")}</title>
-  <meta name="description" content={t($language, "analytics_meta_desc")} />
-</svelte:head>
-
 <main class="relative min-h-screen overflow-hidden px-4 pb-12 pt-24 sm:px-6 lg:px-8">
   <div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
     <div class="absolute -left-24 -top-24 h-96 w-96 rounded-full bg-accent/5 blur-[100px]"></div>

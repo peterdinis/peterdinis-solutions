@@ -59,6 +59,12 @@ npx shadcn-svelte@latest add dialog
 
 See [shadcn-svelte](https://www.shadcn-svelte.com/).
 
+## SEO
+
+- Per-route metadata comes from `+layout.ts` / `analytics/+page.ts` (`PageData.seo`) and is rendered by `SeoHead` (title, description, keywords, canonical, Open Graph, Twitter Card, JSON-LD `Person` / `WebSite` / `WebPage`).
+- **`static/og-image.png`** — add a **1200×630** image at this path so social previews work; URLs are defined in `src/lib/site.ts`.
+- **`static/sitemap.xml`** and **`static/robots.txt`** — update `lastmod` / domain when you ship meaningful changes.
+
 ## License
 
 All rights reserved unless you add your own license file.

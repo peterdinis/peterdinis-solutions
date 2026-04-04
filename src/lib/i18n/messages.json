@@ -132,7 +132,8 @@
     "expanding_title": "Rozširujúca sa prítomnosť",
     "expanding_body": "Sledovanie vzorcov návštevnosti z 12+ regiónov na optimalizáciu edge dodávky.",
     "analytics_edge": "Edge / statické",
-    "analytics_cdn": "CDN"
+    "analytics_cdn": "CDN",
+    "meta_keywords": "full-stack vývojár, webový vývoj, mobilný vývoj, IT riešenia, SvelteKit, TypeScript, Tailwind, React, .NET, softvér na mieru, Slovensko"
   },
   "cs": {
     "meta_title": "Peterdinis Solutions — IT, web a mobilní vývoj",
@@ -267,7 +268,8 @@
     "expanding_title": "Rozšiřující se přítomnost",
     "expanding_body": "Sledování vzorců návštěvnosti z 12+ regionů pro optimalizaci edge dodávky.",
     "analytics_edge": "Edge / statické",
-    "analytics_cdn": "CDN"
+    "analytics_cdn": "CDN",
+    "meta_keywords": "full-stack vývojář, webový vývoj, mobilní vývoj, IT řešení, SvelteKit, TypeScript, Tailwind, React, .NET, software na míru, Slovensko"
   },
   "en": {
     "meta_title": "Peterdinis Solutions — IT, web, and mobile development",
@@ -402,6 +404,7 @@
     "expanding_title": "Expanding presence",
     "expanding_body": "Monitoring traffic patterns from 12+ regions worldwide to optimize edge delivery.",
     "analytics_edge": "Edge / static",
-    "analytics_cdn": "CDN"
+    "analytics_cdn": "CDN",
+    "meta_keywords": "full-stack developer, web development, mobile development, IT solutions, SvelteKit, TypeScript, Tailwind, React, .NET, custom software, Slovakia"
   }
 }

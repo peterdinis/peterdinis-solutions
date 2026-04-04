@@ -1,7 +1,9 @@
 <script lang="ts">
   import "../app.css";
+  import SeoHead from "$lib/components/SeoHead.svelte";
   import SiteFooter from "$lib/components/SiteFooter.svelte";
   import SiteHeader from "$lib/components/SiteHeader.svelte";
+  import { page } from "$app/stores";
   import { tickVisitorIfNewSession } from "$lib/visitors";
   import { syncThemeToggleAria } from "$lib/theme";
   import { t } from "$lib/i18n";
@@ -98,10 +100,9 @@
   });
 </script>
 
-<svelte:head>
-  <title>{t($language, "meta_title")}</title>
-  <meta name="description" content={t($language, "meta_desc")} />
-</svelte:head>
+{#if !$page.error}
+  <SeoHead seo={$page.data.seo} />
+{/if}
 
 <div id="pds-preloader" role="status" aria-live="polite" aria-busy="true">
   <div class="flex flex-col items-center gap-6 px-6 text-center">
