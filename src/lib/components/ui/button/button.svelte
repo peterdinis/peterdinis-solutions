@@ -31,10 +31,12 @@
 </script>
 
 {#if href}
+  <!-- svelte-ignore slot_element_deprecated -->
   <a {href} class={cls} {...rest}>
     <slot />
   </a>
 {:else}
+  <!-- svelte-ignore slot_element_deprecated -->
   <button type={type as "button" | "submit" | "reset"} class={cls} {...rest}>
     <slot />
   </button>

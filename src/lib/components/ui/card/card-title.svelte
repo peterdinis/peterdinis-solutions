@@ -8,6 +8,7 @@
   }: HTMLAttributes<HTMLHeadingElement> = $props();
 </script>
 
+<!-- svelte-ignore slot_element_deprecated -->
 <h3 class={cn("font-display text-2xl font-semibold leading-none tracking-tight", className)} {...rest}>
   <slot />
 </h3>

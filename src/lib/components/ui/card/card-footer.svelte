@@ -8,6 +8,7 @@
   }: HTMLAttributes<HTMLDivElement> = $props();
 </script>
 
+<!-- svelte-ignore slot_element_deprecated -->
 <div class={cn("flex items-center p-6 pt-0", className)} {...rest}>
   <slot />
 </div>

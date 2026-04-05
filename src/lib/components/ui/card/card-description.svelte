@@ -8,6 +8,7 @@
   }: HTMLAttributes<HTMLParagraphElement> = $props();
 </script>
 
+<!-- svelte-ignore slot_element_deprecated -->
 <p class={cn("text-sm text-muted-foreground", className)} {...rest}>
   <slot />
 </p>

@@ -8,6 +8,7 @@
   }: HTMLAttributes<HTMLDivElement> = $props();
 </script>
 
+<!-- svelte-ignore slot_element_deprecated -->
 <div
   class={cn("rounded-xl border border-border bg-card text-card-foreground shadow", className)}
   {...rest}
